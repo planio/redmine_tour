@@ -1,0 +1,18 @@
+<% if tour_item = begin ; render :partial => "#{params[:action]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end %>
+	<div class="nodata" id="redmine-tour">  
+		<div style="text-align: right; font-size: 12px;">
+			<a href="#">Hide these messages</a>
+		</div>
+		<div style="margin: auto; width: 50%; text-align: left;">
+			<%= render :text => tour_item %>
+		</div>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+		document.observe("dom:loaded", function() {
+			try{
+				$('content').down('h2').insert({after:$('redmine-tour').cloneNode(true)});
+				$('redmine-tour').remove();
+			}catch(e){	/* do nothing. we're good where we are. */ }
+		});
+	</script>
+<% end %>
