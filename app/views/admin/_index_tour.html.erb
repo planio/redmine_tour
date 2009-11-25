@@ -1,0 +1,11 @@
+<% if Redmine::DefaultData::Loader::no_data? %>
+<% elsif Project.active.count == 0 or User.active.count == 1 %>
+	<p><strong>This is your Planio administration panel</strong>.</p>
+	<p>You can use it to configure how your Planio works. You can come here at any time to change your Planio configuration.</p>
+	<% if Project.active.count == 0 %>
+	<p>Now, let's start by adding a project. Please click on <em><strong>New</strong></em> next to the Projects label below.</p>
+	<% end %>
+
+<% end %>
+	
+	

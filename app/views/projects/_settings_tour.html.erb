@@ -1,4 +1,20 @@
-<p><strong>Thank you for creating a Planio!</strong></p>
-
-<p>You've just created your new Planio instance. Now, let's go and <strong>set up your first project</strong>.</p>
-<p><a href="#">Click here to get started</a></p><p>
+<% if @project.members.blank? %>
+	<p><strong>Here you can define your project's settings</strong></p>
+	<p>The most important thing for now on this page is the <em><strong><%= l :label_member_plural %></strong></em> tab. You can use it to add members to your project.</p>
+	<p><em>You</em> should be a member of your own project, right? Just follow these simple steps:
+		<ul>
+			<li>
+				Click on <em><strong><%= l :label_member_plural %></strong></em>,
+			</li>
+			<li>
+				Tick the box next to your account name <em><strong><%= User.current.name%></strong></em> in the list on the right,
+			</li>
+			<li>
+				and select one or more roles from the list below. <em><strong><%= Role.find(:first, :order => 'length(permissions) desc').name %></strong></em> should be okay for now.
+			</li>
+			<li>
+				Click <em><strong><%= l :button_add%></strong></em>
+			</li>
+		</ul>
+		<p>That's it. If you like, check out the other project settings here. After you're done, click on <em><strong><%= l :label_administration %></strong></em> to continue the tour.</p>
+<% end%>

@@ -1,12 +1,14 @@
-<% if tour_item = begin ; render :partial => "#{params[:action]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end %>
-	<div class="nodata" id="redmine-tour">  
-		<div style="text-align: right; font-size: 12px;">
-			<a href="#">Hide these messages</a>
+<% if tour_item = begin ; render :partial => "#{params[:action]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end and not tour_item.blank? %>
+	<% show_tour = (User.current.logged? and User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
+
+	<% content_tag(:div, :class => 'nodata', :id => 'redmine-tour', :style => (show_tour ? nil : 'display:none;')) do %>
+		<div style="float: right; font-size: 12px;">
+			<%= link_to_function(l(:label_hide), 'hideTour();') %>
 		</div>
 		<div style="margin: auto; width: 50%; text-align: left;">
 			<%= render :text => tour_item %>
 		</div>
-	</div>
+	<% end %>
 	<script type="text/javascript" charset="utf-8">
 		document.observe("dom:loaded", function() {
 			try{
@@ -16,3 +18,17 @@
 		});
 	</script>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+	function hideTour(){
+		<%= remote_function(:url => tour_path(RedmineTour::tour_name_from_params(params)), :method => :delete, :complete => "$('redmine-tour').hide();") %>;
+	}
+	function showTour(){
+		if($('redmine-tour') && !$('redmine-tour').visible()){
+			<%= remote_function(:url => tours_path(:tour => RedmineTour::tour_name_from_params(params)), :method => :post, :complete => "$('redmine-tour').show();") %>;
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
