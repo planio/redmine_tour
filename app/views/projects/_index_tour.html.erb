@@ -1,0 +1,12 @@
+<p><strong>This is the projects overview.</strong></p>
+<% if Project.active.count == 0 %>
+<p>It seems as if there aren't any projects, yet.
+	<% if User.current.allowed_to?(:add_project, nil, :global => true) %>
+		<%= t 'If you like you can create a new project by clicking on X on the top right', :new_project => content_tag(:em,content_tag(:strong,t(:label_project_new))) %>
+	<% else %>
+		<%= t 'You could ask your Planio administrator to create one so you can start collaborating' %>
+	<% end %>
+</p>
+<% else %>
+<p>To get started working on one of your projects, simply click on its name</p>
+<% end %>

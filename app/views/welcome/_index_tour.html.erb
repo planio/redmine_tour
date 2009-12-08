@@ -6,7 +6,7 @@
 	<p>In order to get started with your brand new Planio, we recommend that you load a default configuration.</p>
 	<p>Please click on <em><strong>Administration</strong></em> in the top menu. <small>(<%= link_to('Please take me there!', :controller => 'admin')%>)</small></p>
 <% elsif User.current.admin? and (no_users or no_projects) %>
-	<p>There isn't much going on here. If you like, we can assist you in getting up and running in no time. Would you like to:</p>
+	<p>There isn't much going on here, yet. If you like, we can assist you in getting up and running in no time. Would you like to:</p>
 	<ul>
 		<% if no_projects %>
 		<li><%= link_to 'Create a project', :controller => 'projects', :action => 'new' %>? <small>(This is also available through <strong>Administration</strong> -> <strong>Projects</strong>)</small></li>

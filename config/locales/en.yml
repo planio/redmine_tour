@@ -1,3 +1,14 @@
 en:
   label_hide: Hide
-  label_thank_you_for_creating_a_planio: Thank you for creating a Planio!
+  label_thank_you_for_creating_a_planio: 'Thank you for creating a Planio!'
+  'Now, lets start by adding a project Please click on X  next to the X label below': 'Now, let''s start by adding a project. Please click on {{new}}  next to the {{projects}} label below.'
+  'Please click on X next to the X label below to invite another user to your Planio': 'Please click on {{new}} next to the {{users}} label below to invite another user to your Planio.'
+  'A user account for X has been created': 'A user account for {{user}} has been created.'
+  'Now, you can add X to one of your projects: Click on the X tab below, select a project from the drop down on the right, select a suitable role, and click on X': 'Now, you can add {{user}} to one of your projects: Click on the {{projects}} tab below, select a project from the drop down on the right, select a suitable role, and click on {{add}}.'
+  'Once youre done why not start working with your project by clicking on X in the top menu': 'Once you''re done, why not start working with your project by clicking on {{projects}} in the top menu.'
+  'Now it makes sense to create your first project': 'Now, it makes sense to create your first project.'
+  'Please click on X in the top menu': 'Please click on {{administration}} in the top menu.'
+  'If you like you can create a new project by clicking on X on the top right': 'If you like, you can create a new project by clicking on {{new_project}} on the top right.'
+  'You could ask your Planio administrator to create one so you can start collaborating': 'You could ask your Planio administrator to create one so you can start collaborating.'
+  'The X tab allows you to see a feed of the projects recent activity ordered by date Its a great help to catch up with the latest events and developments in a project': 'The {{activity}} tab allows you to see a feed of the project''s recent activity ordered by date. It''s a great help in catching up with the latest events and developments in a project.'
+  'The X and X tabs are the entry points to task management You can create tasks, assign them to co-workers, check on their status and much more': 'The {{issues}} and {{new_issue}} tabs are the entry points to task management. You can create tasks, assign them to co-workers, check on their status and much more.'
