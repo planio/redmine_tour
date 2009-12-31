@@ -1,2 +1,14 @@
-de:
-    label_hide: Ausblenden
+en:
+  label_hide: Ausblenden
+  label_thank_you_for_creating_a_planio: 'Danke, dass Sie ein Planio erstellt haben!'
+  'Now, lets start by adding a project Please click on X  next to the X label below': 'Legen Sie als nächsten Schritt bitte ein Projekt an. Dazu auf {{new}} klicken, unten gleich neben {{projects}}.'
+  'Please click on X next to the X label below to invite another user to your Planio': 'Um neue Benutzer zu Ihrem Planio einzuladen, bitte unten auf {{new}} klicken, direkt neben {{users}}.'
+  'A user account for X has been created': 'Ein Benutzerkonto für {{user}} wurde erstellt.'
+  'Now, you can add X to one of your projects: Click on the X tab below, select a project from the drop down on the right, select a suitable role, and click on X': 'Jetzt können Sie {{user}} zu einem Ihrer Projekte hinzufügen: Klicken Sie dazu auf die Registerkarte {{projects}}, wählen Sie ein Projekt aus dem Dropdown-Menü auf der rechten Seite, legen Sie eine Rolle fest und schließen Sie den Vorgang per Klick auf {{add}} ab.'
+  'Once youre done why not start working with your project by clicking on X in the top menu': 'Sobald Sie damit fertig sind, können Sie die Arbeit mit Ihrem Projekt aufnehmen, indem Sie auf {{projects}} im Menü oben klicken.'
+  'Now it makes sense to create your first project': 'Jetzt ist der Zeitpunkt gekommen, Ihr erstes Projekt anzulegen.'
+  'Please click on X in the top menu': 'Bitte klicken Sie auf {{administration}} im oberen Menü.'
+  'If you like you can create a new project by clicking on X on the top right': 'Falls Sie es wünschen, können Sie ein neues Projekt erstellen, indem Sie oben rechts auf {{new_project}} klicken.'
+  'You could ask your Planio administrator to create one so you can start collaborating': 'Sie können den Administrator dieses Planios bitten, ein Projekt zu erstellen, damit Sie Ihre Zusammenarbeit aufnehmen können.'
+  'The X tab allows you to see a feed of the projects recent activity ordered by date Its a great help to catch up with the latest events and developments in a project': 'Auf der Registerkarte {{activity}} können Sie einen Feed mit den letzten Aktivitäten dieses Projekts sehen, sortiert nach Datum. Dieser Feed ist nützlich, um sich einen Überblick über die neuesten Ereignissen und Entwicklungen innerhalb des Projekts zu verschaffen.'
+  'The X and X tabs are the entry points to task management You can create tasks, assign them to co-workers, check on their status and much more': 'Die Registerkarten {{issues}} und {{new_issue}} sind Einstiegspunkte für die Aufgabenverwaltung. Hier können Sie Aufgaben erstellen, Mitarbeitern Aufgaben zuweisen, den Status einer Aufgabe prüfen und vieles mehr.'
