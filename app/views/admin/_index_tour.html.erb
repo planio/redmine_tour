@@ -1,12 +1,12 @@
 <% if Redmine::DefaultData::Loader::no_data? %>
 <% else %>
-<p><strong>This is your Planio administration panel</strong>.</p>
-<p>You can use it to configure how your Planio works. You can come here at any time to change your Planio configuration.</p>
+<p><strong><%= t 'This is your Planio administration panel' %></strong>.</p>
+<p><%= t 'You can use it to configure how your Planio works. You can come here at any time to change your Planio configuration.' %></p>
 
 	<% if Project.active.count == 0 %>
 	<p><%= t 'Now, lets start by adding a project Please click on X  next to the X label below', :new => content_tag(:em, content_tag(:strong, t(:label_new))), :projects => content_tag(:em, content_tag(:strong, t(:label_project_plural)))%></p>
 	<% elsif User.active.count == 1 %>
-	<p>Planio is great for personal use, but it really shines when you use it with your co-workers. <%= t 'Please click on X next to the X label below to invite another user to your Planio', :new => content_tag(:em, content_tag(:strong, t(:label_new))), :users => content_tag(:em, content_tag(:strong, t(:label_user_plural)))%></p>
+	<p><%= t 'Planio is great for personal use, but it really shines when you use it with your co-workers.' %> <%= t 'Please click on X next to the X label below to invite another user to your Planio', :new => content_tag(:em, content_tag(:strong, t(:label_new))), :users => content_tag(:em, content_tag(:strong, t(:label_user_plural)))%></p>
 	<% end %>
 
 <% end %>

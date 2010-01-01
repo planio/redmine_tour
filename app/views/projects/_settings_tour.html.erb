@@ -1,20 +1,20 @@
 <% if @project.members.blank? %>
-	<p><strong>Here you can define your project's settings</strong></p>
-	<p>The most important thing for now on this page is the <em><strong><%= l :label_member_plural %></strong></em> tab. You can use it to add members to your project.</p>
-	<p><em>You</em> should be a member of your own project, right? Just follow these simple steps:
+	<p><strong><%= t 'Here you can define your project''s settings' %></strong></p>
+	<p><%= t'The most important thing for now on this page is the X tab. You can use it to add members to your project.', :members => content_tag(:em,content_tag(:strong,t(:label_member_plural))) %></p>
+	<p><%= t '<em>You</em> should be a member of your own project, right? Just follow these simple steps:' %>
 		<ul>
 			<li>
-				Click on <em><strong><%= l :label_member_plural %></strong></em>,
+				<%= t 'Click on X', :members => content_tag(:em,content_tag(:strong,t(:label_member_plural))) %>,
 			</li>
 			<li>
-				Tick the box next to your account name <em><strong><%= User.current.name%></strong></em> in the list on the right,
+				<%= t 'Tick the box next to your account name X in the list on the right,', :name => content_tag(:em,content_tag(:strong,User.current.name)) %>
 			</li>
 			<li>
-				and select one or more roles from the list below. <em><strong><%= Role.find(:first, :order => 'length(permissions) desc').name %></strong></em> should be okay for now.
+				<%= t 'and select one or more roles from the list below. X should be okay for now.', :role => content_tag(:em,content_tag(:strong, Role.find(:first, :order => 'length(permissions) desc').name)) %>
 			</li>
 			<li>
-				Click <em><strong><%= l :button_add%></strong></em>
+				<%= t 'Click X', :add => content_tag(:em,content_tag(:strong,t(:button_add)))%>
 			</li>
 		</ul>
-		<p>That's it. If you like, check out the other project settings here. After you're done, click on <em><strong><%= l :label_administration %></strong></em> to continue the tour.</p>
+		<p><%= t 'That''s it. If you like, check out the other project settings here.' %> <%= 'After you''re done, click on X to continue the tour.', :administration => content_tag(:em,content_tag(:strong, t(:label_administration))) %></p>
 <% end%>
