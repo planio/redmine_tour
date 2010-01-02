@@ -4,5 +4,5 @@
 <p><%= t 'Once youre done why not start working with your project by clicking on X in the top menu', :projects => content_tag(:em,content_tag(:strong,t(:label_project_plural)))%></p>
 <% elsif Project.active.count == 0 %>
 <p><strong><%= t 'A user account for X has been created', :user => @user.name %></strong></p>
-	<%= t 'Now it makes sense to create your first project'%> <%= t 'Please click on X in the top menu', :administration => content_tag(:em,content_tag(:strong,t(:label_administration)))%>
+	<%= t 'Now it makes sense to create your first project' %> <%= t 'Please click on X in the top menu', :administration => content_tag(:em,content_tag(:strong,t(:label_administration)))%>
 <% end %>

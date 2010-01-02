@@ -1,6 +1,6 @@
 <% if @project.members.blank? %>
-	<p><strong><%= t 'Here you can define your project''s settings' %></strong></p>
-	<p><%= t'The most important thing for now on this page is the X tab. You can use it to add members to your project.', :members => content_tag(:em,content_tag(:strong,t(:label_member_plural))) %></p>
+	<p><strong><%= t 'Here you can define your projects settings' %></strong></p>
+	<p><%= t 'The most important thing for now on this page is the X tab You can use it to add members to your project', :members => content_tag(:em,content_tag(:strong,t(:label_member_plural))) %></p>
 	<p><%= t '<em>You</em> should be a member of your own project, right? Just follow these simple steps:' %>
 		<ul>
 			<li>
@@ -10,11 +10,11 @@
 				<%= t 'Tick the box next to your account name X in the list on the right,', :name => content_tag(:em,content_tag(:strong,User.current.name)) %>
 			</li>
 			<li>
-				<%= t 'and select one or more roles from the list below. X should be okay for now.', :role => content_tag(:em,content_tag(:strong, Role.find(:first, :order => 'length(permissions) desc').name)) %>
+				<%= t 'and select one or more roles from the list below X should be okay for now', :role => content_tag(:em,content_tag(:strong, Role.find(:first, :order => 'length(permissions) desc').name)) %>
 			</li>
 			<li>
 				<%= t 'Click X', :add => content_tag(:em,content_tag(:strong,t(:button_add)))%>
 			</li>
 		</ul>
-		<p><%= t 'That''s it. If you like, check out the other project settings here.' %> <%= 'After you''re done, click on X to continue the tour.', :administration => content_tag(:em,content_tag(:strong, t(:label_administration))) %></p>
+		<p><%= t 'Thats it If you like, check out the other project settings here' %> <%= t 'After youre done, click on X to continue the tour', :administration => content_tag(:em,content_tag(:strong, t(:label_administration))) %></p>
 <% end%>

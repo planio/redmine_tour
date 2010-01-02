@@ -1,4 +1,3 @@
-<%= raise 'huhu' %>
 <% if tour_item = begin ; render :partial => "#{params[:action]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end and not tour_item.blank? %>
 	<% show_tour = (User.current.logged? and User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
 

@@ -1,6 +1,6 @@
-<p><strong><%= t 'This is the projects overview.' %></strong></p>
+<p><strong><%= t 'This is the projects overview' %></strong></p>
 <% if Project.active.count == 0 %>
-<p><%= t 'It seems as if there aren''t any projects, yet.' %>
+<p><%= t 'It seems as if there arent any projects, yet' %>
 	<% if User.current.allowed_to?(:add_project, nil, :global => true) %>
 		<%= t 'If you like you can create a new project by clicking on X on the top right', :new_project => content_tag(:em,content_tag(:strong,t(:label_project_new))) %>
 	<% else %>

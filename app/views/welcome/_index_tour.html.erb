@@ -1,23 +1,23 @@
-<% no_users = User.active.count == 1 %>
-<% no_projects = Project.active.count == 0 %>
+<% no_users = (User.active.count == 1) %>
+<% no_projects = (Project.active.count == 0) %>
 
 <p><strong><%= t 'Welcome to X Planio!', :app_title => Setting[:app_title] %></strong></p>
 <% if User.current.admin? and Redmine::DefaultData::Loader::no_data? %>
-	<p><%= t 'In order to get started with your brand new Planio, we recommend that you load a default configuration.' %></p>
-	<p><%= t 'Please click on X in the top menu.', :administration => content_tag(:em,content_tag(:strong,t(:label_administration))) %> <small>(<%= link_to(t 'Take me there!', :controller => 'admin')%>)</small></p>
+	<p><%= t 'In order to get started with your brand new Planio, we recommend that you load a default configuration' %></p>
+	<p><%= t 'Please click on X in the top menu', :administration => content_tag(:em,content_tag(:strong,t(:label_administration))) %> <small>(<%= link_to(t 'Take me there!', :controller => 'admin')%>)</small></p>
 <% elsif User.current.admin? and (no_users or no_projects) %>
-	<p><%= t 'There isn''t much going on here, yet. If you like, we can assist you in getting up and running in no time. Would you like to:' %></p>
+	<p><%= t 'There isnt much going on here, yet If you like, we can assist you in getting up and running in no time Would you like to:' %></p>
 	<ul>
 		<% if no_projects %>
-		<li><%= link_to(t 'Create a project', :controller => 'projects', :action => 'new') %>? <small><%= '(This is also available through X -> X )', :administration => content_tag(:strong,t(:label_administration)), :projects => content_tag(:strong,t(:label_project_plural)) %></small></li>
+		<li><%= link_to(t('Create a project'), :controller => 'projects', :action => 'new') %>? <small><%= t '(This is also available through X -> X)', :administration => content_tag(:strong,t(:label_administration)), :projects => content_tag(:strong,t(:label_project_plural)) %></small></li>
 		<% end %>
 		<% if no_users %>
-		<li><%= link_to(t 'Invite co-workers', :controller => 'users', :action => 'new') %>? <small><%= '(This is also available through X -> X )', :administration => content_tag(:strong,t(:label_administration)), :users => content_tag(:strong,t(:label_user_plural)) %></small></li>
+		<li><%= link_to(t('Invite co-workers'), :controller => 'users', :action => 'new') %>? <small><%= t '(Also available through X -> X)', :administration => content_tag(:strong,t(:label_administration)), :users => content_tag(:strong,t(:label_user_plural)) %></small></li>
 		<% end %>
 	</ul>
-	<p><%= t 'If you know what you''re up to, just click on <em><strong>hide</strong></em> in the upper right corner to remove this window.' %></p>
+	<p><%= t 'If you know what youre up to, just click on <em><strong>X</strong></em> in the upper right corner to remove this window', :hide => content_tag(:em,content_tag(:strong,t(:label_hide))) %></p>
 <% elsif User.current.created_on > 2.days.ago %>
-	<p><%= t 'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on <em><strong>My account</strong></em> in the upper right corner.', :my_account => content_tag(:em,content_tag(:strong,t(:label_my_account))) %></p>
+	<p><%= t 'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on X in the upper right corner', :my_account => content_tag(:em,content_tag(:strong,t(:label_my_account))) %></p>
 <% else %>	
-	<p><%= t 'This is the Planio home screen. It shows your projects and the latest news.' %></p>
+	<p><%= t 'This is the Planio home screen It shows your projects and the latest news' %></p>
 <% end %>
