@@ -15,7 +15,7 @@
 		<li><%= link_to(t('Invite co-workers'), :controller => 'users', :action => 'new') %>? <small><%= t '(Also available through X -> X)', :administration => content_tag(:strong,t(:label_administration)), :users => content_tag(:strong,t(:label_user_plural)) %></small></li>
 		<% end %>
 	</ul>
-	<p><%= t 'If you know what youre up to, just click on <em><strong>X</strong></em> in the upper right corner to remove this window', :hide => content_tag(:em,content_tag(:strong,t(:label_hide))) %></p>
+	<p><%= t 'If you know what youre up to, just click on X in the upper right corner to remove this window', :hide => content_tag(:em,content_tag(:strong,t(:label_hide))) %></p>
 <% elsif User.current.created_on > 2.days.ago %>
 	<p><%= t 'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on X in the upper right corner', :my_account => content_tag(:em,content_tag(:strong,t(:label_my_account))) %></p>
 <% else %>	
