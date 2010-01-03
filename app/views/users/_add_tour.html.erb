@@ -1,8 +1,8 @@
 <% if User.active.count == 1 %>
 <p><strong><%= t 'Lets create a user account' %></strong></p>
 
-<p><%= t 'Please fill in the name and email address of the new user' %> <%= t 'Also specify a login and a password which the user will use to sign in to your Planio' %></p>
-<p><%= t 'Of course, the user will be able to change the password at a later point in time' %></p>
+<p><%= t 'Please fill in the name and email address of the new user', :first => content_tag(:em,content_tag(:strong,t(:field_firstname))), :last => content_tag(:em,content_tag(:strong,t(:field_lastname))), :mail => content_tag(:em,content_tag(:strong,t(:field_mail))) %> <%= t 'Also specify a login and a password which the user will use to sign in to your Planio', :login => content_tag(:em,content_tag(:strong,t(:field_login))), :password => content_tag(:em,content_tag(:strong,t(:field_password))) %></p>
+<p><%= t 'Of course, the user will be able to change the password at a later point in time', :password => t(:field_password) %></p>
 <p><%= t 'You can make other users administrators which enables them do manage your Planio just like you can Please note that this provides them with access to your billing and payment settings, too' %></p>
 <p><%= t 'Finally, click on X', :projects => content_tag(:em,content_tag(:strong,t(:button_create))) %>
 <% end %>
