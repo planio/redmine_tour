@@ -1,0 +1,5 @@
+<% if Project.active.count == 0 %>
+<p><%= t 'To create a new project, please click on X on the upper right', :new => content_tag(:em, content_tag(:strong, t(:label_project_new))) %></p>
+<% end %>
+	
+	

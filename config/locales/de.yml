@@ -4,9 +4,9 @@
 
   'This is your Planio administration panel' : 'Sie befinden sich in der Administration von Planio'
   'You can use it to configure how your Planio works You can come here at any time to change your Planio configuration' : 'Hier können Sie nun Ihr Planio konfigurieren. Zu einem späteren Zeitpunkt können Sie Ihre Einstellungen an dieser Stelle jederzeit anpassen.'
-  'Now, lets start by adding a project Please click on X  next to the X label below': 'Legen Sie als nächsten Schritt bitte ein Projekt an. Dazu auf {{new}} klicken, unten gleich neben {{projects}}.'
+  'Now lets start by adding a project Please click on X next to the X label below': 'Legen Sie als nächsten Schritt bitte ein Projekt an. Dazu klicken Sie hier unten auf {{projects}} und auf der folgenden Seite auf {{new}} in der rechten oberen Ecke.'
   'Planio is great for personal use, but it really shines when you use it with your co-workers' : 'Planio ist sehr nützlich für den persönlichen Gebrauch, aber sein wahres Potential offenbart sich erst, wenn man es gemeinsam mit Kollegen, Mitarbeitern und Kunden einsetzt.'
-  'Please click on X next to the X label below to invite another user to your Planio': 'Um neue Benutzer zu Ihrem Planio einzuladen, bitte unten auf {{new}} klicken, direkt neben {{users}}.'  
+  'Please click on X next to the X label below to invite another user to your Planio': 'Um neue Benutzer zu Ihrem Planio einzuladen, klicken Sie bitte unten zunächst auf {{users}} und auf der folgenden Seite auf {{new}} in der rechten oberen Ecke.'  
   'Creating a project is easy!' : 'Neue Projekte erstellen ist ganz einfach!'
   'Just fill out the form below by giving your project a X and an X' : 'Sie müssen lediglich das untenstehende Formular ausfüllen und einen {{name}} und {{identifier}} bestimmen.'
   'The X will be used as part of all links to your projects pages later on' : 'Die {{identifier}} wird später ein fixer Bestandteil aller Links zu Ihren Projektseiten sein.'
@@ -54,3 +54,5 @@
   'If you know what youre up to, just click on X in the upper right corner to remove this window' : 'Falls Sie sich bereits auskennen und diese Hilfetexte nicht benötigen, klicken Sie bitte einfach oben rechts auf {{hide}}.'
   'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on X in the upper right corner' : 'Haben Sie bereits die Angaben zu Ihrem Benutzerkonto vervollständigt? Änderungen bezüglich Ihrer E-Mailadresse, Ihrer Sprache, Zeitzone, oder Ihres Passworts können Sie oben rechts unter {{my_account}} vornehmen.'
   'This is the Planio home screen It shows your projects and the latest news' : 'Dies ist die Startseite von Planio. Hier werden Ihre Projekte und die letzten Ereignisse angezeigt.'
+  'To create a new project, please click on X on the upper right': 'Um ein neues Projekt zu erstellen, klicken Sie bitte auf {{new}} rechts oben.'
+  'To invite a new user please click on X on the upper right': 'Um einen neuen Benutzer zu Ihrem Planio einzuladen, klicken Sie bitte auf {{new}} in der rechten oberen Ecke.'

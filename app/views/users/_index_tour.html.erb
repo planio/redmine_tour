@@ -1,0 +1,5 @@
+<% if User.active.count == 1 %>
+<p><%= t 'To invite a new user please click on X on the upper right', :new => content_tag(:em, content_tag(:strong, t(:label_user_new))) %></p>
+<% end %>
+	
+	

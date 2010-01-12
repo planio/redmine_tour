@@ -14,9 +14,6 @@ class RedmineTourHook < Redmine::Hook::ViewListener
   render_on :view_layouts_base_before_content, :partial => 'tour/base'
 end
 
-# provide tour_preferences hash
-User.send(:serialize, :tour_preferences, Hash)
-
 Redmine::MenuManager.map :top_menu do |menu|
   menu.delete :help
 end
