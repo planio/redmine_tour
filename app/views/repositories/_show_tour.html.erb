@@ -22,6 +22,9 @@ git config --global user.email <%= User.current.mail%></pre>
 # <%= l(:label_x_your_public_key_in_planio, :link => link_to(l(:label_store), new_public_key_path, :target => '_blank')) %></pre>
 
 			<p><strong><%= l(:label_next_steps)%>:</strong></p>
+			<% if @entries %>
+			<pre>git clone git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git</pre>
+			<% else %>
 			<pre>mkdir <%= @project.identifier %>
 cd <%= @project.identifier %>
 git init
@@ -31,12 +34,15 @@ git commit -m '<%= l(:label_first_commit) %>'
 git remote add origin git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
 # <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
 git push origin master</pre>
+			<% end %>
+			<% unless @entries %>
 
 			<p><strong><%= l(:label_existing_repository)%></strong></p>
 			<pre>cd <%= l(:label_existing_repo_path)%>
 git remote add origin git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
 # <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
 git push origin master</pre>
+			<% end %>
 	
 <% if User.current.allowed_to?(:manage_repository, @project) %>
 <p>
