@@ -62,6 +62,7 @@
   'Prefer X': 'Bevorzugen Sie {{scm}}?'
   'If you prefer using X over X, simply change the X in the X': 'Wenn Sie lieber {{scm1}} als {{scm2}} für dieses Projekt einsetzen möchten, können Sie unter {{settings}} das aktuelle Projektarchiv löschen und das {{type}} ändern.'  
   'You can access your repository by following the instructions below': 'Bitte folgen Sie den Anweisungen, um Zugriff auf das Projektarchiv zu erhalten.'
+  'You are currently not a member of this project Please assign yourself as a member in order to gain access to the repository': 'Sie sind momentan noch nicht Mitglied in diesem Projekt. Bitte fügen Sie sich selbst als Mitglied zum Projekt hinzu, um Zugriff auf das Projektarchiv zu erhalten.'
 
   label_repository_ready: 'Das Projektarchiv ist bereit!'
   notice_repository_ready: 'Das Projektarchiv wurde angelegt. Mit Hilfe von Git können Sie nun Dateien mit Ihren Kollegen austauschen.'

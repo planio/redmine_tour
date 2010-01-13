@@ -1,4 +1,5 @@
 <% if User.current.logged? and User.current.allowed_to?(:commit_access, @project)%>
+
 <% if @repository === Repository::Git %>
 
 
@@ -11,6 +12,9 @@
 			
 				<p><strong><%= l(:label_repository_ready) %></strong></p>
 				<p><%= l(:notice_repository_ready) %></p>
+			<% end %>
+			<% unless User.currrent.member_of?(@project) %>
+			<p><em><%= t 'You are currently not a member of this project Please assign yourself as a member in order to gain access to the repository' %></em></p>
 			<% end %>
 			<p><strong><%= l(:label_set_up_git)%>:</strong></p>
 			<pre># <%= l(:label_download_and_install_git, :git_link => link_to('Git', 'http://git-scm.com/download')) %>
@@ -57,6 +61,9 @@ git push origin master</pre>
 	<p>
 		<strong><%= t('How to access your X', :repo => t(:project_module_repository))%></strong>
 	</p>
+	<% unless User.currrent.member_of?(@project) %>
+	<p><em><%= t 'You are currently not a member of this project Please assign yourself as a member in order to gain access to the repository' %></em></p>
+	<% end %>
 	<p><%= t 'You can access your repository from any tool which supports X Just use the following URI', :repo_name => 'Subversion' %>:</p>
 
 	<p><%= uri = "https://#{RAILS_ENV}.plan.io/svn/#{@project.identifier}" ; link_to(uri,uri) %></p>
