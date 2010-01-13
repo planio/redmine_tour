@@ -59,6 +59,9 @@
   'How to access your X': 'Zugriff auf das {{repo}}'
   'You can access your repository from any tool which supports X Just use the following URI': 'Sie können mit jedem Tool, das {{repo_name}} unterstützt, auf Ihr Projektarchiv zugreifen. Verwenden Sie einfach die folgende URI'
   'Please use your username X and your Planio password to authenticate': 'Zur Authentifizierung nutzen Sie bitte Ihren Benutzernamen {{username}} und Ihr Planio Kennwort.'
+  'Prefer X': 'Bevorzugen Sie {{scm}}?'
+  'If you prefer using X over X, simply change the X in the X': 'Wenn Sie lieber {{scm1}} als {{scm2}} für dieses Projekt einsetzen möchten, können Sie unter {{settings}} das aktuelle Projektarchiv löschen und das {{type}} ändern.'  
+  'You can access your repository by following the instructions below': 'Bitte folgen Sie den Anweisungen, um Zugriff auf das Projektarchiv zu erhalten.'
 
   label_repository_ready: 'Das Projektarchiv ist bereit!'
   notice_repository_ready: 'Das Projektarchiv wurde angelegt. Mit Hilfe von Git können Sie nun Dateien mit Ihren Kollegen austauschen.'

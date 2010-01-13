@@ -1,9 +1,17 @@
-<% if User.current.logged? %>
+<% if User.current.logged? and User.current.allowed_to?(:commit_access, @project)%>
 <% if @repository === Repository::Git %>
 
-			<p><strong><%= l(:label_repository_ready) %></strong></p>
-			<p><%= l(:notice_repository_ready) %></p>
-		
+
+			<% if @entries %>
+				<p>
+					<strong><%= t('How to access your X', :repo => t(:project_module_repository))%></strong>
+				</p>
+				<p><%= t 'You can access your repository by following the instructions below' %>:</p>			
+			<% else %>
+			
+				<p><strong><%= l(:label_repository_ready) %></strong></p>
+				<p><%= l(:notice_repository_ready) %></p>
+			<% end %>
 			<p><strong><%= l(:label_set_up_git)%>:</strong></p>
 			<pre># <%= l(:label_download_and_install_git, :git_link => link_to('Git', 'http://git-scm.com/download')) %>
 git config --global user.name "<%= User.current.name%>"
@@ -30,6 +38,13 @@ git remote add origin git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project
 # <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 	
+<% if User.current.allowed_to?(:manage_repository, @project) %>
+<p>
+	<strong><%= t('Prefer X', :scm => 'Subversion')%></strong>
+</p>
+<p><%= t('If you prefer using X over X, simply change the X in the X', :scm1 => 'Subversion', :scm2 => 'Git', :type => t(:label_scm), :settings => link_to(t(:label_settings),:controller => 'projects', :action => 'settings', :id => @project, :tab => 'repository'))%>
+</p>
+<% end %>
 
 <% elsif @repository === Repository::Subversion %>
 
@@ -41,7 +56,12 @@ git push origin master</pre>
 	<p><%= uri = "https://#{RAILS_ENV}.plan.io/svn/#{@project.identifier}" ; link_to(uri,uri) %></p>
 
 	<p><%= t 'Please use your username X and your Planio password to authenticate', :username => content_tag(:em, content_tag(:strong, User.current.login)) %></p>
-
-
+	<% if User.current.allowed_to?(:manage_repository, @project) %>
+	<p>
+		<strong><%= t('Prefer X', :scm => 'Git')%></strong>
+	</p>
+	<p><%= t('If you prefer using X over X, simply change the X in the X', :scm1 => 'Git', :scm2 => 'Subversion', :type => t(:label_scm), :settings => link_to(t(:label_settings),:controller => 'projects', :action => 'settings', :id => @project, :tab => 'repository'))%>
+	</p>
+	<% end %>
 <% end %>
 <% end %>
