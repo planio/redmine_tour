@@ -1,41 +1,35 @@
 <% if User.current.logged? %>
 <% if @repository === Repository::Git %>
 
-	<h2><%= l(:label_repository)%></h2>
-	<div class="nodata">
-		<div style="width: 75%;margin:auto;text-align:left;">
 			<p><strong><%= l(:label_repository_ready) %></strong></p>
 			<p><%= l(:notice_repository_ready) %></p>
 		
 			<p><strong><%= l(:label_set_up_git)%>:</strong></p>
 			<pre># <%= l(:label_download_and_install_git, :git_link => link_to('Git', 'http://git-scm.com/download')) %>
-	git config --global user.name "<%= User.current.name%>"
-	git config --global user.email <%= User.current.mail%></pre>
+git config --global user.name "<%= User.current.name%>"
+git config --global user.email <%= User.current.mail%></pre>
 		
 			<p><strong><%= l(:label_generate_keypair)%>:</strong></p>
 			<pre>ssh-keygen -t rsa -b 2048
-	# <%= l(:label_x_your_public_key_in_planio, :link => link_to(l(:label_store), new_public_key_path, :target => '_blank')) %></pre>
+# <%= l(:label_x_your_public_key_in_planio, :link => link_to(l(:label_store), new_public_key_path, :target => '_blank')) %></pre>
 
 			<p><strong><%= l(:label_next_steps)%>:</strong></p>
 			<pre>mkdir <%= @project.identifier %>
-	cd <%= @project.identifier %>
-	git init
-	touch README
-	git add README
-	git commit -m '<%= l(:label_first_commit) %>'
-	git remote add origin git@plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
-	# <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
-	git push origin master</pre>
+cd <%= @project.identifier %>
+git init
+touch README
+git add README
+git commit -m '<%= l(:label_first_commit) %>'
+git remote add origin git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
+# <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
+git push origin master</pre>
 
 			<p><strong><%= l(:label_existing_repository)%></strong></p>
 			<pre>cd <%= l(:label_existing_repo_path)%>
-	git remote add origin git@plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
-	# <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
-	git push origin master</pre>
+git remote add origin git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
+# <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
+git push origin master</pre>
 	
-		</div>
-	</div>
-	<% html_title(l(:label_repository)) -%>
 
 <% elsif @repository === Repository::Subversion %>
 
@@ -44,7 +38,7 @@
 	</p>
 	<p><%= t 'You can access your repository from any tool which supports X Just use the following URI', :repo_name => 'Subversion' %>:</p>
 
-	<p><%= link_to "https://#{RAILS_ENV}.plan.io/svn/#{@project.identifier}" %></p>
+	<p><%= uri = "https://#{RAILS_ENV}.plan.io/svn/#{@project.identifier}" ; link_to(uri,uri) %></p>
 
 	<p><%= t 'Please use your username X and your Planio password to authenticate', :username => content_tag(:em, content_tag(:strong, User.current.login)) %></p>
 

@@ -56,9 +56,9 @@
   'This is the Planio home screen It shows your projects and the latest news' : 'Dies ist die Startseite von Planio. Hier werden Ihre Projekte und die letzten Ereignisse angezeigt.'
   'To create a new project, please click on X on the upper right': 'Um ein neues Projekt zu erstellen, klicken Sie bitte auf {{new}} rechts oben.'
   'To invite a new user please click on X on the upper right': 'Um einen neuen Benutzer zu Ihrem Planio einzuladen, klicken Sie bitte auf {{new}} in der rechten oberen Ecke.'
-  'How to access your X': 'How to access your {{repo}}'
-  'You can access your repository from any tool which supports X Just use the following URI': 'You can access your repository from any client application which supports {{repo_name}}. Just use the following URI'
-  'Please use your username X and your Planio password to authenticate': 'Please use your username {{username}} and your Planio password to authenticate.'
+  'How to access your X': 'Zugriff auf das {{repo}}'
+  'You can access your repository from any tool which supports X Just use the following URI': 'Sie können mit jedem Tool, das {{repo_name}} unterstützt, auf Ihr Projektarchiv zugreifen. Verwenden Sie einfach die folgende URI'
+  'Please use your username X and your Planio password to authenticate': 'Zur Authentifizierung nutzen Sie bitte Ihren Benutzernamen {{username}} und Ihr Planio Kennwort.'
 
   label_repository_ready: 'Das Projektarchiv ist bereit!'
   notice_repository_ready: 'Das Projektarchiv wurde angelegt. Mit Hilfe von Git können Sie nun Dateien mit Ihren Kollegen austauschen.'
