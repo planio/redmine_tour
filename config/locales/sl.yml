@@ -4,9 +4,9 @@
   
   'This is your Planio administration panel' : 'This is your Planio administration panel'
   'You can use it to configure how your Planio works You can come here at any time to change your Planio configuration' : 'You can use it to configure how your Planio works. You can come here at any time to change your Planio configuration.'
-  'Now, lets start by adding a project Please click on X next to the X label below' : 'Now, let''s start by adding a project. Please click on {{new}} next to the {{projects}} label below.'
+  'Now lets start by adding a project Please click on X next to the X label below' : 'Now, let''s start by adding a project. Please click on {{projects}} below, and on the following page on {{new}} on the upper right.'
   'Planio is great for personal use, but it really shines when you use it with your co-workers' : 'Planio is great for personal use, but it really shines when you use it with your co-workers.'
-  'Please click on X next to the X label below to invite another user to your Planio' : 'Please click on {{new}} next to the {{users}} label below to invite another user to your Planio.'
+  'Please click on X next to the X label below to invite another user to your Planio' : 'To invite another user to your Planio, please click on {{users}} below and on the next page, click on {{new}} in the upper right corner.'
   'Creating a project is easy!' : 'Creating a project is easy!'
   'Just fill out the form below by giving your project a X and an X' : 'Just fill out the form below by giving your project a {{name}} and an {{identifier}}.'
   'The X will be used as part of all links to your projects pages later on' : 'The {{identifier}} will be used as part of all links to your project''s pages later on.'
@@ -54,3 +54,22 @@
   'If you know what youre up to, just click on X in the upper right corner to remove this window' : 'If you know what you''re up to, just click on {{hide}} in the upper right corner to remove this window.'
   'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on X in the upper right corner' : 'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on {{my_account}} in the upper right corner.'
   'This is the Planio home screen It shows your projects and the latest news' : 'This is the Planio home screen. It shows your projects and the latest news.' 
+  'To create a new project, please click on X on the upper right': 'To create a new project, please click on {{new}} on the upper right.'
+  'To invite a new user please click on X on the upper right': 'To invite a new user, please click on {{new}} on the upper right.'
+  'How to access your X': 'How to access your {{repo}}'
+  'You can access your repository from any tool which supports X Just use the following URI': 'You can access your repository from any client application which supports {{repo_name}}. Just use the following URI'
+  'Please use your username X and your Planio password to authenticate': 'Please use your username {{username}} and your Planio password to authenticate.'
+  
+  label_repository_ready: 'Your repository is ready!'
+  notice_repository_ready: 'Your repository has been set up. You can now start using Git to share your files with your team members.'
+  label_set_up_git: 'Set up Git (first time only)'
+  label_generate_keypair: 'Generate keypair (first time only)'
+  label_download_and_install_git: 'download {{git_link}} and install it on your computer.'
+  label_x_your_public_key_in_planio: '{{link}} your public key in Planio.'
+  label_store: store
+  label_next_steps: 'Next steps'
+  label_first_commit: 'first commit'
+  label_existing_repository: 'Already have a Git repository?'
+  label_existing_repo_path: 'existing_git_repo'
+  label_make_sure: "make sure you are a member in this project and have a role\n# which allows {{permission}}"
+  
