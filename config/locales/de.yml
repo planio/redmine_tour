@@ -56,3 +56,20 @@
   'This is the Planio home screen It shows your projects and the latest news' : 'Dies ist die Startseite von Planio. Hier werden Ihre Projekte und die letzten Ereignisse angezeigt.'
   'To create a new project, please click on X on the upper right': 'Um ein neues Projekt zu erstellen, klicken Sie bitte auf {{new}} rechts oben.'
   'To invite a new user please click on X on the upper right': 'Um einen neuen Benutzer zu Ihrem Planio einzuladen, klicken Sie bitte auf {{new}} in der rechten oberen Ecke.'
+  'How to access your X': 'How to access your {{repo}}'
+  'You can access your repository from any tool which supports X Just use the following URI': 'You can access your repository from any client application which supports {{repo_name}}. Just use the following URI'
+  'Please use your username X and your Planio password to authenticate': 'Please use your username {{username}} and your Planio password to authenticate.'
+
+  label_repository_ready: 'Das Projektarchiv ist bereit!'
+  notice_repository_ready: 'Das Projektarchiv wurde angelegt. Mit Hilfe von Git können Sie nun Dateien mit Ihren Kollegen austauschen.'
+  label_set_up_git: 'Git einrichten (nur beim ersten Mal)'
+  label_generate_keypair: 'SSH-Schlüssel generieren (nur beim ersten Mal)'
+  label_download_and_install_git: '{{git_link}} herunterladen und installieren'
+  label_x_your_public_key_in_planio: 'Öffentlichen Schlüssel in Planio {{link}}'
+  label_store: eintragen
+  label_next_steps: 'Nächste Schritte'
+  label_first_commit: 'erster commit'
+  label_existing_repository: 'Git repository bereits vorhanden?'
+  label_existing_repo_path: 'bestehendes_git_repo'
+  label_make_sure: "Sicherstellen, dass Sie Mitglied im Projekt sind und eine\n# Rolle haben, die {{permission}} erlaubt"
+  
