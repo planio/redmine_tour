@@ -6,6 +6,23 @@
 		<%= t 'The X tab allows you to see a feed of the projects recent activity ordered by date Its a great help to catch up with the latest events and developments in a project', :activity => content_tag(:em,content_tag(:strong,t(:label_activity))) %>
 	<% elsif node.name == :issues %>
 		<%= t 'The X and X tabs are the entry points to task management You can create tasks, assign them to co-workers, check on their status and much more', :issues => content_tag(:em,content_tag(:strong,t(:label_issue_plural))),:new_issue => content_tag(:em,content_tag(:strong,t(:label_issue_new))) %>
+	<% elsif node.name == :news %>
+		<%= t 'X is where project-wide messages can be sent, read and commented You can use the X section like a mailing list', :news => content_tag(:em,content_tag(:strong,t(:label_news))), :news2 => t(:label_news) %>
+	<% elsif node.name == :documents %>
+		<%= t 'Use the X tab to publish and review documents which are of interest for your fellow project memberts', :documents => content_tag(:em,content_tag(:strong,t(:label_document_plural))) %>
+	<% elsif node.name == :wiki %>
+		<%= t 'The X tab leads to a project-wide wiki Think of it as Wikipedia for your project You can use it to create and edit pages with text, images, tables Each page can contain links to other pages making the wiki a powerful tool for knowledge management', :wiki => content_tag(:em,content_tag(:strong,t(:label_wiki))) %>
+	<% elsif node.name == :boards %>
+		<%= t 'The X tab has your projects discussion forums Use the forums to discuss project decisions online in clearly structured threads so that no argument gets overseen', :forums => content_tag(:em,content_tag(:strong,t(:label_board_plural))) %>
+	<% elsif node.name == :files %>
+		<%= t 'The X tab has a list of files which are not documents but equally important to your project', :files => content_tag(:em,content_tag(:strong,t(:label_file_plural))) %>
+	<% elsif node.name == :repository %>
+		<%= t 'The X tab allows you to browse through your project repository The repository is your project folder in the cloud You can access it via client programs from your computer so synchronize files with all other project members', :repo => content_tag(:em,content_tag(:strong,t(:label_repository))) %>
+	<% elsif node.name == :settings %>
+		<%= t 'The X tab gives you access to the projects settings You can manage project members and their rights, versions, issue categories and much more', :settings => content_tag(:em,content_tag(:strong,t(:label_settings))) %>
+
+
+
 	<% end %>
 </p>
 <% end %>
