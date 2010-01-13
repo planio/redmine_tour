@@ -62,6 +62,7 @@
   'Prefer X': 'Prefer {{scm}}?'
   'If you prefer using X over X, simply change the X in the X': 'If you prefer using {{scm1}} over {{scm2}}, simply head to {{settings}}, delete the current repository, and change the {{type}}.'  
   'You can access your repository by following the instructions below': 'You can access your repository by following the instructions below.'
+  'You are currently not a member of this project Please assign yourself as a member in order to gain access to the repository': 'You are currently not a member of this project. Please assign yourself as a member in order to gain access to the repository.'
   
   label_repository_ready: 'Your repository is ready!'
   notice_repository_ready: 'Your repository has been set up. You can now start using Git to share your files with your team members.'
