@@ -63,7 +63,14 @@
   'If you prefer using X over X, simply change the X in the X': 'If you prefer using {{scm1}} over {{scm2}}, simply head to {{settings}}, delete the current repository, and change the {{type}}.'  
   'You can access your repository by following the instructions below': 'You can access your repository by following the instructions below.'
   'You are currently not a member of this project Please assign yourself as a member in order to gain access to the repository': 'You are currently not a member of this project. Please assign yourself as a member in order to gain access to the repository.'
-  
+  'X is where project-wide messages can be sent, read and commented You can use the X section like a mailing list': 'The {{news}} tab is where project-wide messages can be sent, read and commented. You can use the {{news2}} section like a mailing list.'
+  'Use the X tab to publish and review documents which are of interest for your fellow project memberts': 'Use the {{documents}} tab to publish and review documents which are of interest for your fellow project memberts.'
+  'The X tab leads to a project-wide wiki Think of it as Wikipedia for your project You can use it to create and edit pages with text, images, tables Each page can contain links to other pages making the wiki a powerful tool for knowledge management': 'The {{wiki}} tab leads to a project-wide wiki. Think of it as Wikipedia for your project: You can use it to create and edit pages with text, images, tables, etc. Each page can contain links to other pages making the wiki a powerful tool for knowledge management.'
+  'The X tab has a list of files which are not documents but equally important to your project': 'The {{files}} tab has a list of files which are not documents but equally important to your project.'
+  'The X tab allows you to browse through your project repository The repository is your project folder in the cloud You can access it via client programs from your computer so synchronize files with all other project members': 'The {{repo}} tab allows you to browse through your project repository. The repository is your project folder in the cloud: You can access it via client programs from your computer so synchronize files with all other project members.'
+  'The X tab gives you access to the projects settings You can manage project members and their rights, versions, issue categories and much more': 'The {{settings}} tab gives you access to the project''s settings. You can manage project members and their rights, versions, issue categories, and much more.'
+  'The X tab has your projects discussion forums Use the forums to discuss project decisions online in clearly structured threads so that no argument gets overseen': 'The {{forums}} tab has your project''s discussion forums. Use the forums to discuss project decisions online in clearly structured threads so that no argument gets overseen.'
+
   label_repository_ready: 'Your repository is ready!'
   notice_repository_ready: 'Your repository has been set up. You can now start using Git to share your files with your team members.'
   label_set_up_git: 'Set up Git (first time only)'
