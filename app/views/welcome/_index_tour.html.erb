@@ -4,7 +4,7 @@
 <p><strong><%= t 'Welcome to X Planio!', :app_title => Setting[:app_title] %></strong></p>
 <% if User.current.admin? and Redmine::DefaultData::Loader::no_data? %>
 	<p><%= t 'In order to get started with your brand new Planio, we recommend that you load a default configuration' %></p>
-	<p><%= t 'Please click on X in the top menu', :administration => content_tag(:em,content_tag(:strong,t(:label_administration))) %> <small>(<%= link_to(t 'Take me there!', '/admin')%>)</small></p>
+	<p><%= t 'Please click on X in the top menu', :administration => content_tag(:em,content_tag(:strong,t(:label_administration))) %> <small>(<%= link_to(t('Take me there!'), '/admin')%>)</small></p>
 <% elsif User.current.admin? and (no_users or no_projects) %>
 	<p><%= t 'There isnt much going on here, yet If you like, we can assist you in getting up and running in no time Would you like to:' %></p>
 	<ul>
