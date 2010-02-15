@@ -3,9 +3,9 @@ require 'redmine'
 
 Redmine::Plugin.register :redmine_tour do
   name 'Redmine Tour plugin'
-  author 'Jan Schulz-Hofen'
-  description 'This is a plugin for Redmine'
-  version '0.0.1'
+  author 'Jan Schulz-Hofen, ROCKET RENTALS GmbH'
+  description 'Redmine tour for first-time users'
+  version '1.0.0'
   menu :top_menu, :tour, 'http://plan.io/kontakt', :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
 end
 
