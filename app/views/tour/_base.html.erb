@@ -1,4 +1,4 @@
-<% if User.current.admin and Redmine::DefaultData::Loader::no_data? %>
+<% if User.current.admin and (params[:controller] != 'admin' and params[:action] != 'index' or params[:controller] != 'welcome' and params[:action] != 'index') and Redmine::DefaultData::Loader::no_data? %>
 	<div class="nodata" id="redmine-tour">
 		<% form_tag({:controller => 'admin', :action => 'default_configuration'}) do %>
 		    <%= simple_format(l(:text_no_configuration_data)) %>
