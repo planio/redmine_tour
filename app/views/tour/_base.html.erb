@@ -8,28 +8,27 @@
 		<% end %>
 	</div>
 <% elsif tour_item = begin ; render :partial => "#{params[:action]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end and not tour_item.blank? %>
-		<% show_tour = (User.current.logged? and User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
+	<% show_tour = (User.current.logged? and User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
 
-		<% content_tag(:div, :class => 'nodata', :id => 'redmine-tour', :style => (show_tour ? nil : 'display:none;')) do %>
-			<div style="float: right; font-size: 12px;">
-				<%= link_to_function(l(:label_hide), 'hideTour();') %>
-			</div>
-			<div style="margin: auto; width: 50%; text-align: left;">
-				<%= render :text => tour_item %>
-			</div>
-	                <script type="text/javascript" charset="utf-8">
-	                  Event.observe(window, 'load', function() { pageTracker._trackPageview("<%= "redmine_tour_#{RedmineTour::tour_name_from_params(params)}" %>"); });
-	                </script>
-		<% end %>
-		<script type="text/javascript" charset="utf-8">
-			document.observe("dom:loaded", function() {
-				try{
-					$('content').down('h2').insert({after:$('redmine-tour').cloneNode(true)});
-					$('redmine-tour').remove();
-				}catch(e){	/* do nothing. we're good where we are. */ }
-			});
-		</script>
+	<% content_tag(:div, :class => 'nodata', :id => 'redmine-tour', :style => (show_tour ? nil : 'display:none;')) do %>
+		<div style="float: right; font-size: 12px;">
+			<%= link_to_function(l(:label_hide), 'hideTour();') %>
+		</div>
+		<div style="margin: auto; width: 50%; text-align: left;">
+			<%= render :text => tour_item %>
+		</div>
+                <script type="text/javascript" charset="utf-8">
+                  Event.observe(window, 'load', function() { pageTracker._trackPageview("<%= "redmine_tour_#{RedmineTour::tour_name_from_params(params)}" %>"); });
+                </script>
 	<% end %>
+	<script type="text/javascript" charset="utf-8">
+		document.observe("dom:loaded", function() {
+			try{
+				$('content').down('h2').insert({after:$('redmine-tour').cloneNode(true)});
+				$('redmine-tour').remove();
+			}catch(e){	/* do nothing. we're good where we are. */ }
+		});
+	</script>
 <% end %>
 
 	<script type="text/javascript" charset="utf-8">
