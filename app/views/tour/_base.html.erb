@@ -7,6 +7,7 @@
 		    <%= submit_tag l(:text_load_default_configuration) %></p>
 		<% end %>
 	</div>
+	<%= render :partial => 'tour/dom_hack' %>
 <% elsif tour_item = begin ; render :partial => "#{params[:action]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end and not tour_item.blank? %>
 	<% show_tour = (User.current.logged? and User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
 
@@ -21,14 +22,7 @@
                   Event.observe(window, 'load', function() { pageTracker._trackPageview("<%= "redmine_tour_#{RedmineTour::tour_name_from_params(params)}" %>"); });
                 </script>
 	<% end %>
-	<script type="text/javascript" charset="utf-8">
-		document.observe("dom:loaded", function() {
-			try{
-				$('content').down('h2').insert({after:$('redmine-tour').cloneNode(true)});
-				$('redmine-tour').remove();
-			}catch(e){	/* do nothing. we're good where we are. */ }
-		});
-	</script>
+	<%= render :partial => 'tour/dom_hack' %>
 <% end %>
 
 	<script type="text/javascript" charset="utf-8">

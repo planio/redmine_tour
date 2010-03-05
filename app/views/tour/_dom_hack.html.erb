@@ -1,0 +1,8 @@
+<script type="text/javascript" charset="utf-8">
+	document.observe("dom:loaded", function() {
+		try{
+			$('content').down('h2').insert({after:$('redmine-tour').cloneNode(true)});
+			$('redmine-tour').remove();
+		}catch(e){	/* do nothing. we're good where we are. */ }
+	});
+</script>
