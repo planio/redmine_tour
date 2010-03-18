@@ -83,4 +83,4 @@ en:
   label_existing_repository: 'Already have a Git repository?'
   label_existing_repo_path: 'existing_git_repo'
   label_make_sure: "make sure you are a member in this project and have a role\n# which allows {{permission}}"
-  
+  'Additionally you can select one or more of the optional X to extend your projects functionality': 'Additionally, you can select one or more of the optional {{apps}} to extend your project''s functionality.'

@@ -1,7 +1,8 @@
-<% if Project.active.count == 0 %>
+	<% if Project.active.count == 0 %>
 <p><strong><%= t 'Creating a project is easy!' %></strong></p>
 
 <p><%= t 'Just fill out the form below by giving your project a X and an X', :name => content_tag(:em, content_tag(:strong, t(:field_name))), :identifier => content_tag(:em, content_tag(:strong, t(:field_identifier))) %> <%= t 'The X will be used as part of all links to your projects pages later on', :identifier => t(:field_identifier) %></p>
+<p><%= t 'Additionally you can select one or more of the optional X to extend your projects functionality', :apps => content_tag(:em, content_tag(:strong,t(:label_module_plural))) %></p>
 <p><%= t 'If youre not sure about the rest, just leave everything as it is You can always change these options later' %></p>
 <p><%= t 'Finally, please click on X', :save => content_tag(:em, content_tag(:strong, t(:button_save))) %></p>
 <% end %>
