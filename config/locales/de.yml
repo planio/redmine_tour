@@ -83,4 +83,4 @@
   label_existing_repository: 'Git repository bereits vorhanden?'
   label_existing_repo_path: 'bestehendes_git_repo'
   label_make_sure: "Sicherstellen, dass Sie Mitglied im Projekt sind und eine\n# Rolle haben, die {{permission}} erlaubt"
-  
+  'Additionally you can select one or more of the optional X to extend your projects functionality': 'Wenn Sie mögen, können Sie außerdem eine oder mehrere unserer {{}} aktivieren, um den Funktionsumfang Ihres Projekts zu erweitern.'  
