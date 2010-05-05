@@ -1,3 +1,4 @@
+<% if @project %>
 <p><strong><%= t 'This is the project overview' %></strong></p>
 <p><%= t 'Using the tabs above you can easily navigate between the main sections of the project Some of the sections available are' %></p>
 <% menu_items_for(:project_menu, @project) do |node| %>
@@ -25,4 +26,5 @@
 
 	<% end %>
 </p>
+<% end %>
 <% end %>
