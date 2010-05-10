@@ -1,4 +1,4 @@
-<% if @project.members.blank? %>
+<% if @project and @project.members.blank? %>
 	<p><strong><%= t 'Here you can define your projects settings' %></strong></p>
 	<p><%= t 'The most important thing for now on this page is the X tab You can use it to add members to your project', :members => content_tag(:em,content_tag(:strong,t(:label_member_plural))) %></p>
 	<p><%= t '<em>You</em> should be a member of your own project, right? Just follow these simple steps:' %>
