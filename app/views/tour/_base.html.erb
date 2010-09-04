@@ -18,9 +18,9 @@
 		<div style="margin: auto; width: 50%; text-align: left;">
 			<%= render :text => tour_item %>
 		</div>
-                <script type="text/javascript" charset="utf-8">
+                <!-- <script type="text/javascript" charset="utf-8">
                   Event.observe(window, 'load', function() { pageTracker._trackPageview("<%= "redmine_tour_#{RedmineTour::tour_name_from_params(params)}" %>"); });
-                </script>
+                </script> -->
 	<% end %>
 	<%= render :partial => 'tour/dom_hack' %>
 <% end %>
