@@ -6,6 +6,12 @@ Redmine::Plugin.register :redmine_tour do
   author 'Jan Schulz-Hofen, ROCKET RENTALS GmbH'
   description 'Redmine tour for first-time users'
   version '1.0.0'
+  
+  settings :default => {
+    'repo_host_base' => 'plan.io',
+    'repo_host' => nil
+  }
+  
   menu :top_menu, :tour, 'http://plan.io/kontakt', :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
 end
 
@@ -17,6 +23,3 @@ end
 Redmine::MenuManager.map :top_menu do |menu|
   menu.delete :help
 end
-
-
-

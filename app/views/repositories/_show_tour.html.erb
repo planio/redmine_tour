@@ -1,5 +1,6 @@
 <% if User.current.logged? and User.current.allowed_to?(:commit_access, @project)%>
 
+<% repo_host = Setting.plugin_redmine_tour['repo_host'] || "#{Rails.env}.#{Setting.plugin_redmine_tour['repo_host_base']}" %>
 <% if @repository === Repository::Git %>
 
 
@@ -27,7 +28,7 @@ git config --global user.email <%= User.current.mail%></pre>
 
 			<p><strong><%= l(:label_next_steps)%>:</strong></p>
 			<% if @entries %>
-			<pre>git clone git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git</pre>
+			<pre>git clone git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git</pre>
 			<% else %>
 			<pre>mkdir <%= @project.identifier %>
 cd <%= @project.identifier %>
@@ -35,7 +36,7 @@ git init
 touch README
 git add README
 git commit -m '<%= l(:label_first_commit) %>'
-git remote add origin git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
+git remote add origin git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git
 # <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
@@ -43,7 +44,7 @@ git push origin master</pre>
 
 			<p><strong><%= l(:label_existing_repository)%></strong></p>
 			<pre>cd <%= l(:label_existing_repo_path)%>
-git remote add origin git@<%= RAILS_ENV %>.plan.io:<%= RAILS_ENV %>-<%= @project.identifier %>.git
+git remote add origin git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git
 # <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
@@ -66,7 +67,7 @@ git push origin master</pre>
 	<% end %>
 	<p><%= t 'You can access your repository from any tool which supports X Just use the following URI', :repo_name => 'Subversion' %>:</p>
 
-	<p><%= uri = "https://#{RAILS_ENV}.plan.io/svn/#{@project.identifier}/#{@path}" ; link_to(uri,uri) %></p>
+	<p><%= uri = "https://#{repo_host}/svn/#{@project.identifier}/#{@path}" ; link_to(uri,uri) %></p>
 
 	<p><%= t 'Please use your username X and your Planio password to authenticate', :username => content_tag(:em, content_tag(:strong, User.current.login)) %></p>
 	<% if User.current.allowed_to?(:manage_repository, @project) %>
