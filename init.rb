@@ -9,7 +9,9 @@ Redmine::Plugin.register :redmine_tour do
   
   settings :default => {
     'repo_host_base' => 'plan.io',
-    'repo_host' => nil
+    'repo_host' => nil,
+    'git_enabled' => true,
+    'svn_enabled' => true
   }
   
   menu :top_menu, :tour, 'http://plan.io/kontakt', :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
