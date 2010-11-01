@@ -84,7 +84,7 @@ en:
   label_existing_repo_path: 'existing_git_repo'
   label_make_sure: "make sure you are a member in this project and have a role\n# which allows {{permission}}"
   'Additionally you can select one or more of the optional X to extend your projects functionality': 'Additionally, you can select one or more of the optional {{apps}} to extend your project''s functionality.'
-  alfresco_tour_header: 'This is the LabCase Documents section.'
+  alfresco_tour_header: 'This is the Assets section.'
   alfresco_tour_p1: 'Here you can upload and download documents to share with your co-workers.'
   alfresco_tour_p2: 'Clicking a document with the left mouse button will download it directly to your computer.'
   alfresco_tour_p3: 'Clicking a document or folder with the right mouse button will open a context menu with more options.'
