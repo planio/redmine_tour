@@ -11,22 +11,22 @@
 				<p><%= t 'You can access your repository by following the instructions below' %></p>			
 			<% else %>
 			
-				<p><strong><%= l(:label_repository_ready) %></strong></p>
-				<p><%= l(:notice_repository_ready) %></p>
+				<p><strong><%= l(:'Your repository is ready') %></strong></p>
+				<p><%= l(:'Your repository has been set up You can now start using Git to share your files with your team members') %></p>
 			<% end %>
 			<% unless User.current.member_of?(@project) %>
 			<p><em><%= t 'You are currently not a member of this project Please assign yourself as a member in order to gain access to the repository' %></em></p>
 			<% end %>
-			<p><strong><%= l(:label_set_up_git)%>:</strong></p>
-			<pre># <%= l(:label_download_and_install_git, :git_link => link_to('Git', 'http://git-scm.com/download')) %>
+			<p><strong><%= l(:'Set up Git first time only')%>:</strong></p>
+			<pre># <%= l(:'download X and install it on your computer', :git_link => link_to('Git', 'http://git-scm.com/download')) %>
 git config --global user.name "<%= User.current.name%>"
 git config --global user.email <%= User.current.mail%></pre>
 		
-			<p><strong><%= l(:label_generate_keypair)%>:</strong></p>
+			<p><strong><%= l(:'Generate keypair first time only')%>:</strong></p>
 			<pre>ssh-keygen -t rsa -b 2048
-# <%= l(:label_x_your_public_key_in_planio, :link => link_to(l(:label_store), new_public_key_path, :target => '_blank')) %></pre>
+# <%= l(:'X your public key in Redmine', :app_name => Setting.plugin_redmine_tour['app_name'], :link => link_to(l(:'store'), new_public_key_path, :target => '_blank')) %></pre>
 
-			<p><strong><%= l(:label_next_steps)%>:</strong></p>
+			<p><strong><%= l(:'Next steps')%>:</strong></p>
 			<% if @entries %>
 			<pre>git clone git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git</pre>
 			<% else %>
@@ -35,17 +35,17 @@ cd <%= @project.identifier %>
 git init
 touch README
 git add README
-git commit -m '<%= l(:label_first_commit) %>'
+git commit -m '<%= l(:'first commit') %>'
 git remote add origin git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git
-# <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
+# <%= l(:'make sure you are a member in this project and have a role which allows X', :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
 			<% unless @entries %>
 
-			<p><strong><%= l(:label_existing_repository)%></strong></p>
-			<pre>cd <%= l(:label_existing_repo_path)%>
+			<p><strong><%= l(:'Already have a Git repository')%></strong></p>
+			<pre>cd <%= l(:'existing_git_repo')%>
 git remote add origin git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git
-# <%= l(:label_make_sure, :permission => l(:permission_commit_access))%>
+# <%= l(:'make sure you are a member in this project and have a role which allows X', :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
 	
@@ -69,7 +69,7 @@ git push origin master</pre>
 
 	<p><%= uri = "https://#{repo_host}/svn/#{@project.identifier}/#{@path}" ; link_to(uri,uri) %></p>
 
-	<p><%= t 'Please use your username X and your Planio password to authenticate', :username => content_tag(:em, content_tag(:strong, User.current.login)) %></p>
+	<p><%= t 'Please use your username X and your Redmine password to authenticate', :app_name => Setting.plugin_redmine_tour['app_name'], :username => content_tag(:em, content_tag(:strong, User.current.login)) %></p>
 	<% if Setting.plugin_redmine_tour['git_enabled'] && User.current.allowed_to?(:manage_repository, @project) %>
 	<p>
 		<strong><%= t('Prefer X', :scm => 'Git')%></strong>

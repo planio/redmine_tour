@@ -1,20 +1,20 @@
 require 'redmine'
 
-
 Redmine::Plugin.register :redmine_tour do
   name 'Redmine Tour plugin'
-  author 'Jan Schulz-Hofen, ROCKET RENTALS GmbH'
+  author 'Jan Schulz-Hofen, Planio GmbH (http://plan.io)'
   description 'Redmine tour for first-time users'
-  version '1.0.0'
+  version '1.1.0'
   
   settings :default => {
+    'app_name' => 'Planio',
     'repo_host_base' => 'plan.io',
     'repo_host' => nil,
     'git_enabled' => true,
     'svn_enabled' => true
   }
   
-  menu :top_menu, :tour, 'http://plan.io/kontakt', :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
+  menu :top_menu, :tour, 'http://plan.io/contact', :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
 end
 
 # initialize hook

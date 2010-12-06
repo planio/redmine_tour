@@ -1,13 +1,13 @@
 <% if Redmine::DefaultData::Loader::no_data? %>
 <% else %>
-<p><strong><%= t 'This is your Planio administration panel' %></strong>.</p>
-<p><%= t 'You can use it to configure how your Planio works You can come here at any time to change your Planio configuration' %></p>
+<p><strong><%= t 'This is your Redmine administration panel', :app_name => Setting.plugin_redmine_tour['app_name'] %></strong>.</p>
+<p><%= t 'You can use it to configure how your Redmine works You can come here at any time to change your Redmine configuration', :app_name => Setting.plugin_redmine_tour['app_name'] %></p>
 
 	<% if Project.active.count == 0 %>
 	<p><%= t 'Now lets start by adding a project Please click on X next to the X label below', :new => content_tag(:em, content_tag(:strong, t(:label_project_new))), :projects => content_tag(:em, content_tag(:strong, t(:label_project_plural)))%></p>
 	<% elsif User.active.count == 1 %>
-	<p><%= t 'Planio is great for personal use, but it really shines when you use it with your co-workers' %></p>
-	<p><%= t 'Please click on X next to the X label below to invite another user to your Planio', :new => content_tag(:em, content_tag(:strong, t(:label_user_new))), :users => content_tag(:em, content_tag(:strong, t(:label_user_plural)))%></p>
+	<p><%= t 'Redmine is great for personal use, but it really shines when you use it with your co-workers', :app_name => Setting.plugin_redmine_tour['app_name'] %></p>
+	<p><%= t 'Please click on X next to the X label below to invite another user to your Redmine', :app_name => Setting.plugin_redmine_tour['app_name'], :new => content_tag(:em, content_tag(:strong, t(:label_user_new))), :users => content_tag(:em, content_tag(:strong, t(:label_user_plural)))%></p>
 	<% end %>
 
 <% end %>

@@ -1,9 +1,9 @@
 <% no_users = (User.active.count == 1) %>
 <% no_projects = (Project.active.count == 0) %>
 
-<p><strong><%= t 'Welcome to X Planio!', :app_title => Setting[:app_title] %></strong></p>
+<p><strong><%= t 'Welcome to X Redmine!', :app_name => Setting.plugin_redmine_tour['app_name'], :app_title => Setting[:app_title] %></strong></p>
 <% if User.current.admin? and Redmine::DefaultData::Loader::no_data? %>
-	<p><%= t 'In order to get started with your brand new Planio, we recommend that you load a default configuration' %></p>
+	<p><%= t 'In order to get started with your brand new Redmine, we recommend that you load a default configuration', :app_name => Setting.plugin_redmine_tour['app_name'] %></p>
 	<p><%= t 'Please click on X in the top menu', :administration => content_tag(:em,content_tag(:strong,t(:label_administration))) %> <small>(<%= link_to(t('Take me there!'), '/admin')%>)</small></p>
 <% elsif User.current.admin? and (no_users or no_projects) %>
 	<p><%= t 'There isnt much going on here, yet If you like, we can assist you in getting up and running in no time Would you like to:' %></p>
@@ -19,5 +19,5 @@
 <% elsif User.current.created_on > 2.days.ago %>
 	<p><%= t 'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on X in the upper right corner', :my_account => content_tag(:em,content_tag(:strong,t(:label_my_account))) %></p>
 <% else %>	
-	<p><%= t 'This is the Planio home screen It shows your projects and the latest news' %></p>
+	<p><%= t 'This is the Redmine home screen It shows your projects and the latest news', :app_name => Setting.plugin_redmine_tour['app_name'] %></p>
 <% end %>
