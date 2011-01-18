@@ -41,7 +41,7 @@
   'Once youre done why not start working with your project by clicking on X in the top menu': 'Sobald Sie damit fertig sind, können Sie die Arbeit mit Ihrem Projekt aufnehmen, indem Sie auf {{projects}} im Menü oben klicken.' 
   'Now it makes sense to create your first project': 'Jetzt ist der Zeitpunkt gekommen, Ihr erstes Projekt anzulegen.' 
   'Please click on X in the top menu': 'Bitte klicken Sie auf {{administration}} im oberen Menü.'
-  'Welcome to X Redmine!' : 'Willkommen zu {{app_title}} {{app_name}}!'
+  'Welcome to X Redmine!' : 'Willkommen zu {{app_title}}!'
   'In order to get started with your brand new Redmine, we recommend that you load a default configuration' : 'Um einen möglichst raschen Start mit Ihrem brandneuen {{app_name}} zu ermöglichen, empfehlen wir zunächst die Standardkonfiguration zu laden.'
   'Take me there!' : 'Hier geht''s lang!'
   'There isnt much going on here, yet If you like, we can assist you in getting up and running in no time Would you like to:' : 'Hier ist noch nicht viel los. Gerne unterstützen wir Sie bei der Konfiguration. Möchten Sie:'

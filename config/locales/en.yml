@@ -41,7 +41,7 @@ en:
   'Once youre done why not start working with your project by clicking on X in the top menu' : 'Once you''re done why not start working with your project by clicking on {{projects}} in the top menu.'
   'Now it makes sense to create your first project' : 'Now it makes sense to create your first project.'
   'Please click on X in the top menu' : 'Please click on {{administration}} in the top menu.'
-  'Welcome to X Redmine!' : 'Welcome to {{app_title}} {{app_name}}!'
+  'Welcome to X Redmine!' : 'Welcome to {{app_title}}!'
   'In order to get started with your brand new Redmine, we recommend that you load a default configuration' : 'In order to get started with your brand new {{app_name}}, we recommend that you load a default configuration.'
   'Take me there!' : 'Take me there!'
   'There isnt much going on here, yet If you like, we can assist you in getting up and running in no time Would you like to:' : 'There isn''t much going on here, yet. If you like, we can assist you in getting up and running in no time. Would you like to:'
