@@ -1,0 +1,8 @@
+<p><strong><%= t :'This is the Customers section' %></strong></p>
+<p><%= t :'Here you can manage customers companies and contacts people working at those companies' %></p>
+<p><%= t :'You can use this as an address book to store and share contact information with your team' %></p>
+<p><%= t :'By associating Planio issues with cusomer companies andor contacts you can keep track of customer relations' %></p>
+
+<% if @project.present? %><p><%= t :'Furthermore using email integration and templates allows you to use this as a helpdesk tool To learn more about how to configure the helpdesk please click on X and then X', :link => link_to(t(:click_here), settings_project_path(@project, :tab => :crm)) %></p><% end %>
+
+<p><em><%= @project ? t(:'You are currently viewing the customers associated with this project Theres a global customer section as well which contains all customers across all projects it is available in the top menu on this screen', :customers => content_tag(:strong,content_tag(:em, t(:label_crm_customer_plural)))) : t(:'You are currently viewing the global customer section In addition to this theres a project specific customer section in every project for which the Planio App CRM Helpdesk is enabed', :app_name => Setting.plugin_redmine_tour['app_name']) %></em></p>

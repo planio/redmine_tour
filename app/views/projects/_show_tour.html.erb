@@ -7,6 +7,8 @@
 		<%= t 'The X tab allows you to see a feed of the projects recent activity ordered by date Its a great help to catch up with the latest events and developments in a project', :activity => content_tag(:em,content_tag(:strong,t(:label_activity))) %>
 	<% elsif node.name == :issues %>
 		<%= t 'The X and X tabs are the entry points to task management You can create tasks, assign them to co-workers, check on their status and much more', :issues => content_tag(:em,content_tag(:strong,t(:label_issue_plural))),:new_issue => content_tag(:em,content_tag(:strong,t(:label_issue_new))) %>
+	<% elsif node.name == :crm_menu %>
+		<%= t 'The X tab lets you manage customers and customer relations', :customers => content_tag(:em,content_tag(:strong,t(:label_crm_customer_plural))) %>
 	<% elsif node.name == :news %>
 		<%= t 'X is where project-wide messages can be sent, read and commented You can use the X section like a mailing list', :news => content_tag(:em,content_tag(:strong,t(:label_news))), :news2 => t(:label_news) %>
 	<% elsif node.name == :documents %>

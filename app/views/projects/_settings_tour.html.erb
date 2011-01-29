@@ -17,4 +17,10 @@
 			</li>
 		</ul>
 		<p><%= t 'Thats it If you like, check out the other project settings here' %> <%= t 'After youre done, click on X to continue the tour', :administration => content_tag(:em,content_tag(:strong, t(:label_administration))) %></p>
+<% elsif params[:tab] == 'crm' %>
+	<p><strong><%= t :'Here you can define CRM Helpdesk settings' %></strong></p>
+	<p><%= t :'Once set up CRM Helpdesk lets you send issue updates to your customers to keep them in the loop without granting them full access to your Planio Customers will also be able to reply via email and their responses will show up right in your issue history', :app_name => Setting.plugin_redmine_tour['app_name'] %></p>
+	<p><%= t :'By default Planio uses the projects dropbox email address when sending updates to customers Alternatively you can setup one of your own email addresses to redirect to the dropbox address and then enter it here Planio will then send email updates from that address', :app_name => Setting.plugin_redmine_tour['app_name'] %></p>
+	<p><%= t :'On the right you see a list of CRM templates You can use them to communicate with your customers in an effective way In addition to responses for frequent questions you can use the templates to define a header footer and auto-reply To use those special templates be sure to select them in the dropdown fields on the right' %></p>
+	<p><%= t :'To make things even more transparent for your customers you can include a tracking URI in your email messages Your customers will be able to access the current status of their request at any time via this URI without having to log in Use the checkboxes at the bottom to control which information is displayed a tracking page' %></p>
 <% end%>
