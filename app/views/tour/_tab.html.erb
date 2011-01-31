@@ -1,0 +1,13 @@
+<% if tour_item = begin ; render :partial => "#{params[:action]}_#{tab[:name]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end and not tour_item.blank? %>
+	<% show_tour = (!User.current.logged? or User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
+
+	<% content_tag(:div, :class => 'nodata redmine-tour', :style => (show_tour ? nil : 'display:none;')) do %>
+		<div style="float: right; font-size: 12px;">
+			<%= link_to_function(l(:label_hide), 'hideTour();') %>
+		</div>
+		<div style="margin: auto; width: 50%; text-align: left;">
+			<%= render :text => tour_item %>
+		</div>
+	<% end %>
+
+<% end %>

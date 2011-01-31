@@ -17,11 +17,19 @@ Redmine::Plugin.register :redmine_tour do
   menu :top_menu, :tour, 'http://plan.io/contact', :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
 end
 
-# initialize hook
-class RedmineTourHook < Redmine::Hook::ViewListener
+# initialize hooks
+class RedmineTourBaseHook < Redmine::Hook::ViewListener
   render_on :view_layouts_base_before_content, :partial => 'tour/base'
+end
+
+class RedmineTourTabHook < Redmine::Hook::ViewListener
+  render_on :view_layouts_tab_before_content, :partial => 'tour/tab'
 end
 
 Redmine::MenuManager.map :top_menu do |menu|
   menu.delete :help
+end
+
+Dispatcher.to_prepare do
+  ApplicationHelper.send(:include, RedmineTour::Patches::ApplicationHelperPatch)
 end
