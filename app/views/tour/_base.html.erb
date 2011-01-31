@@ -26,7 +26,7 @@
 <% else %>
 
 	<% content_tag(:div, :class => 'contextual', :id => 'redmine-tour-button') do %>
-		<%= link_to t(:label_show_tour), 'http://plan.io/contact', :onclick => 'return showTour();', :target => '_blank', :id => 'redmine-tour-button-show', :class => 'icon icon-help' %>
+		<%= link_to t(:label_show_tour), Setting.plugin_redmine_tour['help_uri'], :onclick => 'return showTour();', :target => '_blank', :id => 'redmine-tour-button-show', :class => 'icon icon-help' %>
 		<%= link_to_function t(:label_hide_tour), 'hideTour();', :id => 'redmine-tour-button-hide', :class => 'icon icon-help', :style => 'display:none;' %>
 	<% end %>
 	<%= render :partial => 'tour/base_dom_hack' %>

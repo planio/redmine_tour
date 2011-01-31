@@ -9,12 +9,12 @@ Redmine::Plugin.register :redmine_tour do
   settings :default => {
     'app_name' => 'Planio',
     'repo_host_base' => 'plan.io',
+    'help_uri' => 'http://plan.io/contact',
     'repo_host' => nil,
     'git_enabled' => true,
     'svn_enabled' => true
   }
   
-  menu :top_menu, :tour, 'http://plan.io/contact', :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
 end
 
 # initialize hooks
@@ -28,6 +28,7 @@ end
 
 Redmine::MenuManager.map :top_menu do |menu|
   menu.delete :help
+  menu.push :tour, Setting.plugin_redmine_tour['help_uri'], :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
 end
 
 Dispatcher.to_prepare do
