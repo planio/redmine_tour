@@ -1,4 +1,6 @@
 "de":
+  label_show_tour: Hilfe
+  label_hide_tour: Hilfe ausblenden
   label_hide: Ausblenden
 
   'This is your Redmine administration panel' : 'Sie befinden sich in der Administration von {{app_name}}'

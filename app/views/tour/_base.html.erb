@@ -7,34 +7,52 @@
 		    <%= submit_tag l(:text_load_default_configuration) %></p>
 		<% end %>
 	</div>
-	<%= render :partial => 'tour/dom_hack' %>
+	<%= render :partial => 'tour/base_dom_hack' %>
 <% elsif tour_item = begin ; render :partial => "#{params[:action]}_tour" ; rescue ActionView::MissingTemplate ; nil ; end and not tour_item.blank? %>
-	<% show_tour = (!User.current.logged? or User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
 
+	<% show_tour = (!User.current.logged? or User.current.pref["redmine_tour_#{RedmineTour::tour_name_from_params(params)}"] != false) ? true : false %>
+	
 	<% content_tag(:div, :class => 'nodata redmine-tour', :id => 'redmine-tour', :style => (show_tour ? nil : 'display:none;')) do %>
-		<div style="float: right; font-size: 12px;">
-			<%= link_to_function(l(:label_hide), 'hideTour();') %>
-		</div>
 		<div style="margin: auto; width: 50%; text-align: left;">
 			<%= render :text => tour_item %>
 		</div>
 	<% end %>
-	<%= render :partial => 'tour/dom_hack' %>
+	<% content_tag(:div, :class => 'contextual', :id => 'redmine-tour-button') do %>
+		<%= link_to_function t(:label_show_tour), 'showTour();', :id => 'redmine-tour-button-show', :class => 'icon icon-help', :style => show_tour ? 'display:none;' : nil %>
+		<%= link_to_function t(:label_hide_tour), 'hideTour();', :id => 'redmine-tour-button-hide', :class => 'icon icon-help', :style => show_tour ? nil : 'display:none;' %>
+	<% end %>
+
+	<%= render :partial => 'tour/base_dom_hack' %>
+<% else %>
+
+	<% content_tag(:div, :class => 'contextual', :id => 'redmine-tour-button') do %>
+		<%= link_to t(:label_show_tour), 'http://plan.io/contact', :onclick => 'return showTour();', :target => '_blank', :id => 'redmine-tour-button-show', :class => 'icon icon-help' %>
+		<%= link_to_function t(:label_hide_tour), 'hideTour();', :id => 'redmine-tour-button-hide', :class => 'icon icon-help', :style => 'display:none;' %>
+	<% end %>
+	<%= render :partial => 'tour/base_dom_hack' %>
 <% end %>
 
 	<script type="text/javascript" charset="utf-8">
 		function hideTour(){
-			<%= User.current.logged? ? remote_function(:url => tour_path(RedmineTour::tour_name_from_params(params)), :method => :delete, :complete => "$$('.redmine-tour').each(function(e){e.hide()});") : "$$('.redmine-tour').each(function(e){e.hide()});" %>;
+			<%= User.current.logged? ? remote_function(:url => tour_path(RedmineTour::tour_name_from_params(params)), :method => :delete, :complete => "hideTourDOM();") : "hideTourDOM();" %>;
+		}
+		function hideTourDOM(){
+			$$('.redmine-tour').each(function(e){e.hide()});
+			$('redmine-tour-button-show').show();
+			$('redmine-tour-button-hide').hide();
 		}
 		function showTour(){
-			// TODO: Make Help-Link link to contact form if pressed on a tab for which we dont have a tour item...
-			// right now, it will just unhide a tour item on another tab which is confusing...
 			
-			if(($$('div#content .tab-content').size() == 0 || !$$('div#content .tab-content').detect(function(e){ return e.visible(); }).down('.redmine-tour').visible()) && $$('.redmine-tour').size() > 0 && $$('.redmine-tour').detect(function(e){ return e.visible(); })){
-				<%= User.current.logged? ? remote_function(:url => tours_path(:tour => RedmineTour::tour_name_from_params(params)), :method => :post, :complete => "$$('.redmine-tour').each(function(e){e.show()});") : "$$('.redmine-tour').each(function(e){e.show()});" %>;
+			if(($$('div#content .tab-content').size() == 0 || !$$('div#content .tab-content').detect(function(e){ return e.visible(); }).down('.redmine-tour').visible()) && $$('.redmine-tour').size() > 0 && !$$('.redmine-tour').detect(function(e){ return e.visible(); })){
+				<%= User.current.logged? ? remote_function(:url => tours_path(:tour => RedmineTour::tour_name_from_params(params)), :method => :post, :complete => "showTourDOM();") : "showTourDOM();" %>;
 				return false;
 			} else {
 				return true;
 			}
+		}
+		function showTourDOM(){
+			$$('.redmine-tour').each(function(e){e.show()});
+			$('redmine-tour-button-show').hide();
+			$('redmine-tour-button-hide').show();
 		}
 	</script>
