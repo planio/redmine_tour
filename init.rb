@@ -2,7 +2,7 @@ require 'redmine'
 
 Redmine::Plugin.register :redmine_tour do
   name 'Redmine Tour plugin'
-  author 'Jan Schulz-Hofen, Planio GmbH (http://plan.io)'
+  author 'Jan Schulz-Hofen, Planio GmbH'
   description 'Redmine tour for first-time users'
   version '1.1.0'
   
