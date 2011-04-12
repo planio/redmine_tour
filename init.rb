@@ -27,8 +27,9 @@ class RedmineTourTabHook < Redmine::Hook::ViewListener
 end
 
 Redmine::MenuManager.map :top_menu do |menu|
+  help_uri = Setting.plugin_redmine_tour['help_uri'] rescue '#' # rescueing from case where settings table is not there yet during initial db:migrate
   menu.delete :help
-  menu.push :tour, Setting.plugin_redmine_tour['help_uri'], :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
+  menu.push :tour, help_uri, :last => true, :html => {:onclick => 'return showTour();', :target => '_blank'}, :caption => :label_help
 end
 
 Dispatcher.to_prepare do
