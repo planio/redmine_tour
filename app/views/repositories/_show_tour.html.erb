@@ -1,6 +1,6 @@
 <% if User.current.logged? and User.current.allowed_to?(:commit_access, @project)%>
 
-<% repo_host = Setting.plugin_redmine_tour['repo_host'] || "#{Rails.env}.#{Setting.plugin_redmine_tour['repo_host_base']}" %>
+<% repo_host = Setting.plugin_redmine_tour['repo_host'] || Setting.host_name %>
 <% if Setting.plugin_redmine_tour['git_enabled'] && @repository === Repository::Git %>
 
 
