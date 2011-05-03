@@ -1,6 +1,6 @@
 <% if User.current.logged? and User.current.allowed_to?(:commit_access, @project)%>
 
-<% repo_host = Setting.plugin_redmine_tour['repo_host'] || "#{Rails.env}.#{Setting.plugin_redmine_tour['repo_host_base']}" %>
+<% repo_host = Setting.plugin_redmine_tour['repo_host'] || Setting.host_name %>
 <% if Setting.plugin_redmine_tour['git_enabled'] && @repository === Repository::Git %>
 
 
@@ -28,7 +28,7 @@ git config --global user.email <%= User.current.mail%></pre>
 
 			<p><strong><%= l(:'Next steps')%>:</strong></p>
 			<% if @entries %>
-			<pre>git clone git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git</pre>
+			<pre>git clone git@<%= repo_host %>:<%= Thread.current[:planio_account] %>-<%= @project.identifier %>.git</pre>
 			<% else %>
 			<pre>mkdir <%= @project.identifier %>
 cd <%= @project.identifier %>
@@ -36,7 +36,7 @@ git init
 touch README
 git add README
 git commit -m '<%= l(:'first commit') %>'
-git remote add origin git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git
+git remote add origin git@<%= repo_host %>:<%= Thread.current[:planio_account] %>-<%= @project.identifier %>.git
 # <%= l(:'make sure you are a member in this project and have a role which allows X', :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
@@ -44,7 +44,7 @@ git push origin master</pre>
 
 			<p><strong><%= l(:'Already have a Git repository')%></strong></p>
 			<pre>cd <%= l(:'existing_git_repo')%>
-git remote add origin git@<%= repo_host %>:<%= Rails.env %>-<%= @project.identifier %>.git
+git remote add origin git@<%= repo_host %>:<%= Thread.current[:planio_account] %>-<%= @project.identifier %>.git
 # <%= l(:'make sure you are a member in this project and have a role which allows X', :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
