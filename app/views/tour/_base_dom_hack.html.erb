@@ -9,7 +9,10 @@
 		try{
 			$$('#content > .contextual')[0].insert({before:$('redmine-tour-button').cloneNode(true)});
 		}catch(e){
-			$$('#content > h2')[0].insert({before:$('redmine-tour-button').cloneNode(true)});
+			var h2 = $$('#content > h2')[0];
+			if(h2) {
+			  $(h2).insert({before:$('redmine-tour-button').cloneNode(true)});
+			}
 		}finally{
 			$('redmine-tour-button').remove();
 		}
