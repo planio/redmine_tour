@@ -1,7 +1,7 @@
 en:
-  label_show_tour: Help
-  label_hide_tour: Hide help
-  label_hide: Hide
+  'label_show_tour': 'Help'
+  'label_hide_tour': 'Hide help'
+  'label_hide': 'Hide'
   
   'This is your Redmine administration panel' : 'This is your {{app_name}} administration panel'
   'You can use it to configure how your Redmine works You can come here at any time to change your Redmine configuration' : 'You can use it to configure how your {{app_name}} works. You can come here at any time to change your {{app_name}} configuration.'
