@@ -1,6 +1,6 @@
 <p><strong><%= t :'This is the Issues section' %></strong></p>
 <p><%= t :'You can create issues assign them to coworkers check on their status and much more' %></p>
-<% if @project and @project.issues.blank? %>
+<% if @project and @project.issues.empty? # ATTENTION: we were previously using .blank? here which was a performance killer %>
 <p><em><%= t :'It seems as if you have not created any issues yet If you like try creating one using the X tab in the upper menu', :new_issue => content_tag(:em, content_tag(:strong, t(:label_issue_new))) %></em></p>
 <% else %>
 <p><%= t :'Clicking an issue with the left mouse button will let you view and modify it if you have the respective permissions' %></p>
