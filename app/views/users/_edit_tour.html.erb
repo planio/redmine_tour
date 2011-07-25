@@ -1,8 +1,8 @@
-<% if User.active.count == 2 and flash[:notice] == l(:notice_successful_create) and Project.active.any?%>
+<% if @user and User.active.count == 2 and flash[:notice] == l(:notice_successful_create) and Project.active.any?%>
 <p><strong><%= t 'A user account for X has been created', :user => @user.name %></strong></p>
 		<p><%= t 'Now, you can add X to one of your projects: Click on the X tab below, select a project from the drop down on the right, select a suitable role, and click on X', :user => @user.firstname, :projects => content_tag(:em,content_tag(:strong,t(:label_project_plural))), :add => content_tag(:em,content_tag(:strong,(t(:button_add)))) %></p>
 <p><%= t 'Once youre done why not start working with your project by clicking on X in the top menu', :projects => content_tag(:em,content_tag(:strong,t(:label_project_plural)))%></p>
-<% elsif Project.active.count == 0 %>
+<% elsif @user and Project.active.count == 0 %>
 <p><strong><%= t 'A user account for X has been created', :user => @user.name %></strong></p>
 	<%= t 'Now it makes sense to create your first project' %> <%= t 'Please click on X in the top menu', :administration => content_tag(:em,content_tag(:strong,t(:label_administration)))%>
 <% end %>
