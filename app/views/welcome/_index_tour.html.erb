@@ -16,7 +16,7 @@
 		<% end %>
 	</ul>
 	<p><%= t 'If you know what youre up to, just click on X in the upper right corner to remove this window', :hide => content_tag(:em,content_tag(:strong,t(:label_hide))) %></p>
-<% elsif User.current.created_on > 2.days.ago %>
+<% elsif User.current.created_on and User.current.created_on > 2.days.ago %>
 	<p><%= t 'Have you completed your account details yet? You can set up your email preferences, your language and time zone, or change your password by clicking on X in the upper right corner', :my_account => content_tag(:em,content_tag(:strong,t(:label_my_account))) %></p>
 <% else %>	
 	<p><%= t 'This is the Redmine home screen It shows your projects and the latest news', :app_name => Setting.plugin_redmine_tour['app_name'] %></p>
