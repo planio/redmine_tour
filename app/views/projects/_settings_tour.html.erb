@@ -7,10 +7,10 @@
 				<%= t 'Click on X', :members => content_tag(:em,content_tag(:strong,t(:label_member_plural))) %>,
 			</li>
 			<li>
-				<%= t 'Tick the box next to your account name X in the list on the right,', :name => content_tag(:em,content_tag(:strong,User.current.name)) %>
+				<%= t 'Tick the box next to your account name X in the list on the right,', :name => content_tag(:em,content_tag(:strong,h(User.current.name))) %>
 			</li>
 			<li>
-				<%= t 'and select one or more roles from the list below X should be okay for now', :role => content_tag(:em,content_tag(:strong, Role.find(:first, :order => 'length(permissions) desc').name)) %>
+				<%= t 'and select one or more roles from the list below X should be okay for now', :role => content_tag(:em,content_tag(:strong, h(Role.find(:first, :order => 'length(permissions) desc').name))) %>
 			</li>
 			<li>
 				<%= t 'Click X', :add => content_tag(:em,content_tag(:strong,t(:button_add)))%>

@@ -19,8 +19,8 @@
 			<% end %>
 			<p><strong><%= l(:'Set up Git first time only')%>:</strong></p>
 			<pre># <%= l(:'download X and install it on your computer', :git_link => link_to('Git', 'http://git-scm.com/download')) %>
-git config --global user.name "<%= User.current.name%>"
-git config --global user.email <%= User.current.mail%></pre>
+git config --global user.name "<%= h User.current.name %>"
+git config --global user.email <%= h User.current.mail %></pre>
 		
 			<p><strong><%= l(:'Generate keypair first time only')%>:</strong></p>
 			<pre>ssh-keygen -t rsa -b 2048
@@ -28,15 +28,15 @@ git config --global user.email <%= User.current.mail%></pre>
 
 			<p><strong><%= l(:'Next steps')%>:</strong></p>
 			<% if @entries %>
-			<pre>git clone git@<%= repo_host %>:<%= Thread.current[:planio_account] %>-<%= @project.identifier %>.git</pre>
+			<pre>git clone git@<%= h repo_host %>:<%= h Thread.current[:planio_account] %>-<%= h @project.identifier %>.git</pre>
 			<% else %>
-			<pre>mkdir <%= @project.identifier %>
-cd <%= @project.identifier %>
+			<pre>mkdir <%= h @project.identifier %>
+cd <%= h @project.identifier %>
 git init
 touch README
 git add README
 git commit -m '<%= l(:'first commit') %>'
-git remote add origin git@<%= repo_host %>:<%= Thread.current[:planio_account] %>-<%= @project.identifier %>.git
+git remote add origin git@<%= h repo_host %>:<%= h Thread.current[:planio_account] %>-<%= h @project.identifier %>.git
 # <%= l(:'make sure you are a member in this project and have a role which allows X', :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
@@ -44,7 +44,7 @@ git push origin master</pre>
 
 			<p><strong><%= l(:'Already have a Git repository')%></strong></p>
 			<pre>cd <%= l(:'existing_git_repo')%>
-git remote add origin git@<%= repo_host %>:<%= Thread.current[:planio_account] %>-<%= @project.identifier %>.git
+git remote add origin git@<%= h repo_host %>:<%= h Thread.current[:planio_account] %>-<%= h @project.identifier %>.git
 # <%= l(:'make sure you are a member in this project and have a role which allows X', :permission => l(:permission_commit_access))%>
 git push origin master</pre>
 			<% end %>
@@ -67,9 +67,9 @@ git push origin master</pre>
 	<% end %>
 	<p><%= t 'You can access your repository from any tool which supports X Just use the following URI', :repo_name => 'Subversion' %>:</p>
 
-	<p><%= uri = "https://#{repo_host}/svn/#{@project.identifier}/#{@path}" ; link_to(uri,uri) %></p>
+	<p><%= uri = "https://#{ h repo_host }/svn/#{ h @project.identifier }/#{ h @path }" ; link_to(h(uri),h(uri)) %></p>
 
-	<p><%= t 'Please use your username X and your Redmine password to authenticate', :app_name => Setting.plugin_redmine_tour['app_name'], :username => content_tag(:em, content_tag(:strong, User.current.login)) %></p>
+	<p><%= t 'Please use your username X and your Redmine password to authenticate', :app_name => Setting.plugin_redmine_tour['app_name'], :username => content_tag(:em, content_tag(:strong, h(User.current.login))) %></p>
 	<% if Setting.plugin_redmine_tour['git_enabled'] && User.current.allowed_to?(:manage_repository, @project) %>
 	<p>
 		<strong><%= t('Prefer X', :scm => 'Git')%></strong>
